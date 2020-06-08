@@ -1,0 +1,38 @@
+﻿@model IEnumerable<QuarantineChefs.Models.Recipe>
+
+@{
+    ViewData["Title"] = "Browse";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Browse</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RecipeText)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RecipeText)
+            </td>
+            <td>
+               |
+                <a asp-action="Show" asp-route-id="@item.RecipeId">Show</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

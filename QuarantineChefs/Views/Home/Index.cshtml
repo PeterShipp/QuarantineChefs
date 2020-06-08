@@ -1,0 +1,406 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1 style="text-align:center"><b>Quarantine Chef's</b></h1>
+
+<hr />
+<hr />
+
+<img src="~/images/QuarantineChefs.jpg" width="1140" height="800" align="middle" />
+
+<hr />
+<hr />
+
+<p>
+    Quarantine Chef's are here to inform the public on how to cook at home, a DIY for cooking empowering recipes. During this hardship and pandemic;
+    covid-19 has us all staying in doors. Thus going out to eat is not an ethical decision. Our recipe Blog shows step by step
+    instructions on how to make food right from your own kitchen! Our users can visit our site to explore more recipes with ease
+    right from home. Our stay at home chef’s blog, by Peter and Sean, can inspire a new generation of immune-boosting and overall
+    wellness recipes made easy with just a few ingredients. All of our recipes are made to help fight against COVID-19 and any other
+    form of it to come.
+</p>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+    body {
+        font-family: Arial;
+        margin: 0;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    img {
+        vertical-align: middle;
+    }
+
+    /* Position the image container (needed to position the left and right arrows) */
+    .container {
+        position: relative;
+    }
+
+    /* Hide the images by default */
+    .mySlides {
+        display: none;
+    }
+
+    /* Add a pointer when hovering over the thumbnail images */
+    .cursor {
+        cursor: pointer;
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+        cursor: pointer;
+        position: absolute;
+        top: 40%;
+        width: auto;
+        padding: 16px;
+        margin-top: -50px;
+        color: blue;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        -webkit-user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+    /* Number text (1/6 etc) */
+    .numbertext {
+        color: #222;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+    }
+
+    /* Container for image text */
+    .caption-container {
+        text-align: center;
+        background-color: #222;
+        padding: 2px 16px;
+        color: white;
+    }
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* Six columns side by side */
+    .column {
+        float: left;
+        width: 16.66%;
+    }
+
+    /* Add a transparency effect for thumbnail images */
+    .demo {
+        opacity: 0.6;
+    }
+
+        .active,
+        .demo:hover {
+            opacity: 1;
+        }
+</style>
+<body>
+
+    <h2 style="text-align:center">Slideshow Gallery</h2>
+
+    <div class="container">
+        <div class="mySlides">
+            <div class="numbertext">1 / 6</div>
+            <img src="~/images/Green Breakfast Smoothie.jpg" style="width:40%">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">2 / 6</div>
+            <img src="~/images/Chicken with Pomegranate & Brazil Nuts.jpg" style="width:40%">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">3 / 6</div>
+            <img src="~/images/Rich Tomato Soup with Pesto2.jpg" style="width:40%">
+        </div>
+        <div class="mySlides">
+            <div class="numbertext">4 / 6</div>
+            <img src="~/images/Orange Blueberry Bircher2.jpg" style="width:40%">
+        </div>
+        <div class="mySlides">
+            <div class="numbertext">5 / 6</div>
+            <img src="~/images/Turkey and Coriander Burgers with Guacamole.jpg" style="width:40%">
+        </div>
+        <div class="mySlides">
+            <div class="numbertext">6 / 6</div>
+            <img src="~/images/Prawn Jambalaya2.jpg" style="width:40%">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+
+        <div class="caption-container">
+            <p id="caption"></p>
+        </div>
+
+        <div class="row">
+            <div class="column">
+                <img class="demo cursor" src="~/images/Green Breakfast Smoothie.jpg" style="width:100%" onclick="currentSlide(1)" alt="Green Breakfast Smoothie">
+            </div>
+            <div class="column">
+                <img class="demo cursor" src="~/images/Chicken with Pomegranate & Brazil Nuts.jpg" style="width:100%" onclick="currentSlide(2)" alt="Chicken with Pomegranate & Brazil Nuts">
+            </div>
+            <div class="column">
+                <img class="demo cursor" src="~/images/Rich Tomato Soup with Pesto2.jpg" style="width:100%" onclick="currentSlide(3)" alt="Rich Tomato Soup with Pesto">
+            </div>
+            <div class="column">
+                <img class="demo cursor" src="~/images/Orange Blueberry Bircher2.jpg" style="width:100%" onclick="currentSlide(4)" alt="Orange & Blueberry Bircher">
+            </div>
+            <div class="column">
+                <img class="demo cursor" src="~/images/Turkey and Coriander Burgers with Guacamole.jpg" style="width:100%" onclick="currentSlide(5)" alt="Turkey and Coriander Burgers with Guacamole">
+            </div>
+            <div class="column">
+                <img class="demo cursor" src="~/images/Prawn Jambalaya2.jpg" style="width:100%" onclick="currentSlide(6)" alt="Prawn Jambalaya">
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            var captionText = document.getElementById("caption");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            captionText.innerHTML = dots[slideIndex - 1].alt;
+        }
+    </script>
+
+</body>
+
+<hr />
+
+<h3><b><i>Green Breakfast Smoothie</i></b></h3>
+<img src="~/images/Green Breakfast Smoothie.jpg" width="300" height="250" align="right" />
+
+<p>Prep time for this is only 10 minutes It is easy to make and servies two.</p>
+
+<h5><b>Nutrition Facts: per serving</b></h5>
+<ul>
+    <li>Kcal: 243</li>
+    <li>Fat: 10g</li>
+    <li>Saturates: 7g</li>
+    <li>Carbs: 27g</li>
+    <li>Sugars: 18g</li>
+    <li>Fibre: 6g</li>
+    <li>Protein: 7g</li>
+    <li>Salt: 0.4g</li>
+</ul>
+
+<h5><b><i>Why This Recipe?</i></b></h5>
+<ol>
+    <li>Blitz healthy ingredients for an energy boosting breakfast.</li>
+
+    <li>Spinach is a major superfood that is great for your overall health.</li>
+
+    <li>Its dark green leaves' immune-boosting properties are most bioavailable — and therefore most effective as fighting the flu</li>
+
+    <li>Overall powerful smoothie that can assist in preventing the common cold/flu while protecting the body from damaging free radicals.
+    </li>
+</ol>
+
+<h3><b><i>Chicken with pomegranate and Brazil nuts</i></b></h3>
+<img src="~/images/Chicken with Pomegranate & Brazil Nuts.jpg" width="300" height="250" align="right" />
+
+<p>Prep time for this is 35 minutes and takes 45 minutes to cook. This recipe serves up to six.</p>
+
+<h5><b>Nutrition Facts: per serving</b></h5>
+<ul>
+    <li>Kcal: 707</li>
+    <li>Fat: 56g</li>
+    <li>Saturates: 18g</li>
+    <li>Carbs: 4g</li>
+    <li>Sugars: 2g</li>
+    <li>Fibre: 2g</li>
+    <li>Protein: 45g</li>
+    <li>Salt: 0.5g</li>
+</ul>
+
+<h5><b><i>Why This Recipe?</i></b></h5>
+
+<ol>
+    <li>Pomegranate is one of the healthiest fruits on earth.</li>
+
+    <li>Pomegranate has anti-oxidant, anti-viral and anti-tumor properties which entails vitamin A, C, E, and folic acid.</li>
+
+    <li>This amazing fruit consists three times as many antioxidants as both wine or green tea.</li>
+
+    <li>Marinate chicken in ginger, lime and pomegranate molasses served on slices
+        of grilled aubergine for a mouthwatering main dash
+    </li>
+</ol>
+
+<h3><b><i>Rich Tomato Soup with Pesto</i></b></h3>
+<img src="~/images/Rich Tomato Soup with Pesto2.jpg" width="300" height="250" align="right" />
+
+<p>Prep time for this is 10 minutes. This takes 15 minutes to cook.</p>
+
+<h5><b>Nutrition Facts: per serving</b></h5>
+<ul>
+    <li>Kcal: 213</li>
+    <li>Fat: 14g</li>
+    <li>Saturates: 7g</li>
+    <li>Carbs: 14g</li>
+    <li>Sugars: 13g</li>
+    <li>Fibre: 4g</li>
+    <li>Protein: 8g</li>
+    <li>Salt: 1.15g</li>
+</ul>
+
+<h5><b><i>Why This Recipe?</i></b></h5>
+
+<ol>
+    <li>Antioxidants like lycopene and carotenoids that cut down oxidative stress and inflammation.</li>
+
+    <li>Reducing the possibility of developing some cancers.</li>
+
+    <li>It's even been found to reduce cold and flu symptoms by 85%.</li>
+    
+    <li>Overall there’s no reason not to enjoy homemade tomato soup in the depths of winter.</li>
+
+</ol>
+
+<h3><b><i>Orange and Blueberry Bircher</i></b></h3>
+<img src="~/images/Orange Blueberry Bircher2.jpg" width="300" height="250" align="right" />
+
+<p>Prep time for this is only 5 minutes (plus over night chilling, no cooking) It is easy to make and serves two.</p>
+
+<h5><b>Nutrition Facts: per serving</b></h5>
+<ul>
+    <li>Kcal: 345</li>
+    <li>Fat: 9g</li>
+    <li>Saturates: 3g</li>
+    <li>Carbs: 48g</li>
+    <li>Sugars: 22g</li>
+    <li>Fibre: 8g</li>
+    <li>Protein: 13g</li>
+    <li>Salt: 0.2g</li>
+</ul>
+
+<h5><b><i>Why This Recipe?</i></b></h5>
+
+<ol>
+    <li>One orange offers 116.2 per cent of the daily value for vitamin C.
+    </li>
+
+    <li>Blueberries contain flavonoids — a type of antioxidant that can help reduce damage to cells and boost your immune system.</li>
+
+    <li>The fiber, potassium, folate, vitamin C, vitamin B6, and phytonutrient content in blueberries supports heart health</li>
+    
+    <li>Proper function of a healthy immune system is best for preventing colds, flu's and recurrent ear infections.
+    </li>
+</ol>
+
+<h3><b><i>Turkey and Coriander Burgers with Guacamole</i></b></h3>
+<img src="~/images/Turkey and Coriander Burgers with Guacamole.jpg" width="300" height="250" align="right" />
+
+<p>Prep time for this is 15 minutes. Cook time is 15 mintues. </p>
+
+<h5><b>Nutrition Facts: per serving</b></h5>
+<ul>
+    <li>Kcal: 497</li>
+    <li>Fat: 15g</li>
+    <li>Saturates: 3g</li>
+    <li>Carbs: 51g</li>
+    <li>Sugars: 7g</li>
+    <li>Fibre: 6g</li>
+    <li>Protein: 40g</li>
+    <li>Salt: 1.3g</li>
+</ul>
+
+<h5><b><i>Why This Recipe?</i></b></h5>
+
+<ol>
+    <li>
+        These healthy burgers are full of vitamin C. 
+    </li>
+
+    <li>Guacamole packs impressive heart-healthy monounsaturated fats to gut-friendly fiber.</li>
+
+    <li>Potassium is an essential nutrient for regulating blood pressure and balancing the fluids in our body.</li>
+    <li>
+        Has low-fat turkey flavoured with herbs and topped with spicy avocado.
+    </li>
+</ol>
+
+<h3><b><i>Prawn Jambalaya</i></b></h3>
+<img src="~/images/Prawn Jambalaya2.jpg" width="300" height="250" align="right" />
+
+<p>Prep time for this is 10 minutes. This takes 35 minutes to cook Serving 2</p>
+
+<h5><b>Nutrition Facts: per serving</b></h5>
+<ul>
+    <li>Kcal: 396</li>
+    <li>Fat: 8g</li>
+    <li>Saturates: 1g</li>
+    <li>Carbs: 55g</li>
+    <li>Sugars: 15g</li>
+    <li>Fibre: 9g</li>
+    <li>Protein: 20g</li>
+    <li>Salt: 1.3g</li>
+</ul>
+
+<h5><b><i>Why This Recipe?</i></b></h5>
+
+<ol>
+    <li>
+        This nourishing jambalaya is a winning recipe.
+    </li>
+
+    <li>
+        It's low-fat, low-calorie provides 4 of your 5-a-day - plus it's all made in one pan so less washing up!
+    </li>
+
+    <li>
+        Prawns are a rich source of selenium, one of the most effective antioxidants at maintaining healthy cells.
+    </li>
+
+    <li>They also contain high levels of Zinc, which is important to develop a healthy immune system</li>
+</ol>

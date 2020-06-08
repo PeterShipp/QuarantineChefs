@@ -1,0 +1,322 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h2><b>Quarantine Chef's</b></h2>
+
+<p>
+    To inform the public on how to cook at home, a DIY for cooking empowering recipes. During this hardship and pandemic; covid-19 has us all staying in doors. Thus going out to eat is not an ethical decision. Our recipe Blog shows step by step instructions on how to make food right from your own kitchen! Our users can visit our site to explore more recipes with ease right from home. Our stay at home chef’s blog, by Peter and Sean, can inspire a new generation of immune-boosting and overall wellness recipes made easy with just a few ingredients. All of our recipes are made to help fight against COVID-19 and any other form of it to come.
+</p>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+    body {
+        font-family: Arial;
+        margin: 0;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    img {
+        vertical-align: middle;
+    }
+
+    /* Position the image container (needed to position the left and right arrows) */
+    .container {
+        position: relative;
+    }
+
+    /* Hide the images by default */
+    .mySlides {
+        display: none;
+    }
+
+    /* Add a pointer when hovering over the thumbnail images */
+    .cursor {
+        cursor: pointer;
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+        cursor: pointer;
+        position: absolute;
+        top: 40%;
+        width: auto;
+        padding: 16px;
+        margin-top: -50px;
+        color: blue;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        -webkit-user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+    /* Number text (1/4 etc) */
+    .numbertext {
+        color: #222;
+        font-size: 24px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+    }
+
+    /* Container for image text */
+    .caption-container {
+        text-align: center;
+        background-color: #222;
+        padding: 2px 16px;
+        color: white;
+    }
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* Four columns side by side */
+    .column {
+        float: left;
+        width: 16.66%;
+    }
+
+    /* Add a transparency effect for thumnbail images */
+    .demo {
+        opacity: 0.6;
+    }
+
+        .active,
+        .demo:hover {
+            opacity: 1;
+        }
+</style>
+<body>
+
+    <h2 style="text-align:center">Slideshow Gallery</h2>
+
+    <div class="container">
+        <div class="mySlides">
+            <div class="numbertext">1 / 4</div>
+            <img src="~/images/Green Breakfast Smoothie.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">2 / 4</div>
+            <img src="~/images/Chicken with Pomegranate & Brazil Nuts.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">3 / 4</div>
+            <img src="~/images/Rich tomato soup with pesto.jpg" style="width:100%">
+        </div>
+        <div class="mySlides">
+            <div class="numbertext">4 / 4</div>
+            <img src="~/images/Orange Blueberry Bircher.jpg" style="width:100%">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+
+        <div class="caption-container">
+            <p id="caption"></p>
+        </div>
+
+        <div class="row">
+            <div class="column">
+                <img class="demo cursor" src="~/images/Green Breakfast Smoothie.jpg" style="width:100%" onclick="currentSlide(1)" alt="Green Breakfast Smoothie">
+            </div>
+            <div class="column">
+                <img class="demo cursor" src="~/images/Chicken with Pomegranate & Brazil Nuts.jpg" style="width:100%" onclick="currentSlide(2)" alt="Chicken with Pomegranate & Brazil Nuts">
+            </div>
+            <div class="column">
+                <img class="demo cursor" src="~/images/Rich tomato soup with pesto.jpg" style="width:92%" onclick="currentSlide(3)" alt="Rich Tomato Soup with Pesto">
+            </div>
+            <div class="column">
+                <img class="demo cursor" src="~/images/Orange Blueberry Bircher.jpg" style="width:100%" onclick="currentSlide(3)" alt="Rich Tomato Soup with Pesto">
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            var captionText = document.getElementById("caption");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            captionText.innerHTML = dots[slideIndex - 1].alt;
+        }
+    </script>
+
+</body>
+
+
+<h3><b>Green Breakfast Smoothie</b></h3>
+
+<h4><i>Green breakfast smoothie</i></h4>
+<img src="~/images/Green Breakfast Smoothie.jpg" width="300" height="250" align="right" />
+
+<p>Prep time for this is only 10 minutes It is easy to make and servies two.</p>
+
+<h5><b>Ingredients</b></h5>
+<ul>
+    <li>1 handful spinach, roughly chopped</li>
+    <li>100g broccoli florets, roughly chopped</li>
+    <li>2 celery sticks</li>
+    <li>4 tbsp desiccated coconut</li>
+    <li>1 banana</li>
+    <li>300ml rice milk</li>
+    <li>1 scoop of vegan protein powder</li>
+</ul>
+
+<h5><b>Method</b></h5>
+<ol>
+    <li>Whizz 300ml water and ingredients in a blender until smooth</li>
+</ol>
+
+<h3><b>Recipe Two</b></h3>
+
+<h4><i>Chicken with pomegranate and Brazil nuts</i></h4>
+<img src="~/images/Chicken with Pomegranate & Brazil Nuts.jpg" width="300" height="250" align="right" />
+
+<p>Prep time for this is 35 minutes and takes 45 minutes to cook. This recipe serves up to six.</p>
+
+<h5><b>Ingredients</b></h5>
+<h6>For the Chicken</h6>
+<ul>
+    <li>150g pack Brazil nuts, half left whole, half chopped</li>
+    <li>thumb-sized piece ginger, peeled</li>
+    <li>1 garlic clove</li>
+    <li>juice 1 lime</li>
+    <li>250g pot of coconut milk yogurt</li>
+    <li>4 tbsp pomegranate molasses</li>
+    <li>6 free-range chicken legs or quarters</li>
+</ul>
+
+<h6>To serve</h6>
+<ul>
+    <li>2 tbsp rapeseed oil</li>
+    <li>2 large aubergines, sliced lengthways</li>
+    <li>1 pomegranate, seeds only</li>
+</ul>
+
+<h5><b>Method</b></h5>
+<ol>
+    <li>
+        Put the whole Brazil nuts in a food processor with the ginger, garlic and lime juice.
+        Blend to a paste, then add the coconut yogurt and molasses.
+        Blitz briefly to combine, then tip into a large bowl along with the chicken.
+        Mix well to coat in the marinade, cover the bowl with cling film and leave in the fridge overnight.
+    </li>
+    <li>
+        The following day, heat oven to 190C/170C fan/gas 5.
+        Spread the chicken out in a deep roasting tin, skin-side up, and cook in the oven for 45 mins-1 hr or until golden brown and the juices run clear
+    </li>
+    <li>
+        While the chicken cooks, brush the aubergine slices with the oil and cook on a hot griddle pan for 3-4 mins each side or until tender and patterned with char marks.
+        Lay the aubergines on a serving platter, add the cooked chicken and scatter over the chopped Brazil nuts and the pomegranate seeds
+    </li>
+</ol>
+
+<h3><b>Recipe Three</b></h3>
+
+<h4><i>Rich tomato soup with pesto</i></h4>
+<img src="~/images/Rich tomato soup with pesto.jpg" width="300" height="250" align="right" />
+
+<p>Prep time for this is 10 minutes. This takes 15 minutes to cook.</p>
+
+<h5><b>Ingredients</b></h5>
+<ul>
+    <li>1 tbsp olive oil</li>
+    <li>2 garlic cloves, crushed</li>
+    <li>5 sunblush tomatoes in oil, roughly chopped</li>
+    <li>3 x 400g cans plum tomatoes</li>
+    <li>500ml turkey or vegetable stock</li>
+    <li>1 tsp surgar, any type, or more to taste</li>
+    <li>142ml pot soured cream</li>
+    <li>125g pot fresh basil pesto</li>
+    <li>basil leaves, to serve</li>
+</ul>
+
+<h5><b>Method</b></h5>
+<ol>
+    <li>
+        Heat the butter or oil in a large pan, then add the garlic and soften for a few mins over a low heat.
+        Add the SunBlush tomatoes, canned tomatoes, stock, sugar and seasoning, then bring to a simmer.
+        Let the soup bubble for 10 mins until the tomatoes have broken down a little.
+    </li>
+
+    <li>
+        Whizz with a stick blender, adding half the pot of soured cream as you go.
+        Taste and adjust the seasoning – add more sugar if you need to.
+        Serve in bowls with 1 tbsp or so of the pesto swirled on top, a little more soured cream and scatter with basil leaves.
+    </li>
+</ol>
+
+<h3><b>Recipe Four</b></h3>
+
+<h4><i>Orange &Aacute; Blueberry Bircher</i></h4>
+<img src="~/images/Orange Blueberry Bircher.jpg" width="300" height="250" align="right" />
+
+<p>Prep time for this is 5 minutes. Plus overnight chilling, no cooking. Serves 2</p>
+
+<h5><b>Ingredients</b></h5>
+<ul>
+    <li>70g porridge oats</li>
+    <li>2 tbsp golden linseeds</li>
+    <li>zest of 1/2 an orange</li>
+    <li>3/4 of a 175 tub yogurt</li>
+    <li>2 peeled and chopped oranges</li>
+    <li>4 handfuls blueberries from a 150g pack</li>
+    
+</ul>
+
+<h5><b>Method</b></h5>
+<ol>
+    <li>
+        Mix 70g oats and 2 tbsp golden linseeds with the zest of 1/2 an orange. Pour over 300ml boiling water
+        and leave overnight. The next day, stir in the three-quarters of a 175g tub of yogurt, spoon into
+        glasses or bowls, top with 2 peeled and chopped oranges, the remaining yougurt and 4 handfuls of
+        blueberries from a 150g pack.
+    </li>
+
+</ol>
